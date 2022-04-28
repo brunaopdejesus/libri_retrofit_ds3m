@@ -1,14 +1,17 @@
 package com.cristianomoraes.libri_retorfit;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cristianomoraes.libri_retorfit.model.Item;
 import com.cristianomoraes.libri_retorfit.model.Livro;
@@ -120,7 +123,35 @@ public class FeedLivro extends AppCompatActivity {
                 txtDescricao = itemView.findViewById(R.id.txt_livro_descricao_container);
 
                 /* AÇÃO DE CLIQUE PARA EDITAR E EXCLUIR LIVRO */
+                itemView.setOnClickListener(view -> {
 
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(FeedLivro.this)
+                            .setMessage("Escolha a ação que deseja executar 👀🙀")
+                            .setPositiveButton("Editar ✍️", (dialog1, witch)->{})
+                            .setNegativeButton("Excluir ☠️", (dialog2, witch)->{
+
+                                routerInterface = APIUtil.getUsuarioInterface();
+
+                                Call<Livro> call = routerInterface.deleteLivro(cod_livro);
+
+                                // retorno da chamada de call
+                                call.enqueue(new Callback<Livro>() {
+                                    @Override
+                                    public void onResponse(Call<Livro> call, Response<Livro> response) {
+                                        Toast.makeText(FeedLivro.this, "Livro excluído com sucesso 🥳", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(FeedLivro.this, FeedLivro.class));
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<Livro> call, Throwable t) {
+
+                                    }
+                                });
+
+                            });
+                    alertDialog.show();
+
+                });
 
             }
 
