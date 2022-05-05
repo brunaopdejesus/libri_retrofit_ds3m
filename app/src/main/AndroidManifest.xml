@@ -7,23 +7,24 @@
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Libri_retorfit">
+        android:theme="@style/Theme.Libri_retorfit"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".AlterarLivro"
+            android:exported="false" />
         <activity
             android:name=".CadastroLivro"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".FeedLivro"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,8 +33,7 @@
         </activity>
         <activity
             android:name=".CadastroUsuario"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

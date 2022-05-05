@@ -24,4 +24,6 @@
     <string name="cadastrarLivro">CADASTRAR</string>
     <string name="edicaoLivro">EDIÇÃO DE LIVRO</string>
     <string name="alterarLivro">EDITAR</string>
+    <string name="cadastroLivroEditar">EDITAR LIVRO</string>
+    <string name="editarLivro">EDITAR</string>
 </resources>

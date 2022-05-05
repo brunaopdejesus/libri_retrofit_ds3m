@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_alterar_livro.xml" value="0.3117154811715481" />
+        <entry key="app/src/main/res/layout/activity_cadastro_livro.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/layout/activity_feed_livro.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/layout/item_container_livro.xml" value="0.5192708333333333" />
       </map>
